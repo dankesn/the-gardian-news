@@ -8,6 +8,7 @@ export class News {
 	webUrl: string;
 	apiUrl: string;
 	isHosted: boolean; 
+	fields: Fields; 
 
 	
 	 constructor(obj?: any) {
@@ -20,11 +21,16 @@ export class News {
     this.webUrl = obj && obj.webUrl || "";
     this.apiUrl = obj &&  obj.apiUrl || "";
     this.isHosted = obj && obj.isHosted || null;
+    this.fields = obj && obj.fields || null;
   }
 
 
+}
+export class Fields {
+	bodyText: string; 
 
+  	 constructor(obj?: any) {
+    this.bodyText = obj && obj.bodyText || "";
 
-
-
+  }
 }

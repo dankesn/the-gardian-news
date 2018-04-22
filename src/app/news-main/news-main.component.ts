@@ -10,37 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NewsMainComponent implements OnInit {
 	news: News[]; 
-	params = {
-    "page": 1,
-    filter: {
-    section: "",
-  },
- 
-  }
-
-
-
+	
 
   constructor(private newsService: NewsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  	this.route.params.subscribe(params =>{
-  		
-  		
   		this.updateNews(); 
-  	})
+  	
   	
   }
-
-  updateNews(params?: any){
-  	 if(params) {
-      this.params.page = params.page || this.params.page;
-      this.params.filter.section = params.filter.section || this.params.filter.section;
-    }
-  	this.newsService.getNews().subscribe(response =>{
+  updateNews(){
+  	this.newsService.getInitialNews().subscribe(response =>{
   		this.news = response.response.results; 
-
-
   	})
 
   }

@@ -11,6 +11,14 @@ import { News } from '../../models/news';
 })
 export class SectionComponent implements OnInit {
 
+  myParams = {
+    'orderBy': "newest",
+    'showFields': 'all',
+    'pageSize': 15,
+    'apiKey': '57885ac9-e353-4a76-92fe-87efd38361d6',
+    'section': ''
+}
+
 	news: News[];
   queryParams; 
   section: string = '';
@@ -18,14 +26,16 @@ export class SectionComponent implements OnInit {
   constructor(private newsService: NewsService,  private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.myParams);
     this.route.params.subscribe(params =>{
-  	this.section = this.route.snapshot.paramMap.get('section'); 
-  	this.newsService.getNews("section=" + this.section).subscribe(response =>{
+  	this.myParams.section = this.route.snapshot.paramMap.get('section'); 
+  	this.newsService.getNews(this.myParams).subscribe(response =>{
   	this.news = response.response.results; 
   	})
       })
 
   }
+
 
 }
 

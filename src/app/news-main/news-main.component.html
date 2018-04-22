@@ -1,4 +1,5 @@
 <div *ngFor= "let story of news">
 	<span class="sectionName">{{story.sectionName}}</span>
-	<h2 class="title">{{story.webTitle}}</h2>
+	<h2 class="title"> <a  href="{{story.webUrl}}" target="_blank">{{story.webTitle}}</a></h2>
+	<p class="publishDate">{{story.webPublicationDate | date:'short'}}</p>
 </div>

@@ -1,3 +1,16 @@
-<p>
-  header works!
-</p>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link">The Guardian</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">  
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/news']" routerLinkActive="active" >Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/news/opinion']" routerLinkActive="active" >Opinion</a>
+    </li>
+  </ul>
+</nav>

@@ -10,6 +10,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { NewsMainComponent } from './news-main/news-main.component';
 
 import { NewsService } from './services/news.service';
+import { SectionComponent } from './news-main/section/section.component';
 
 
 
@@ -20,6 +21,7 @@ import { NewsService } from './services/news.service';
     HeaderComponent,
     FooterComponent,
     NewsMainComponent,
+    SectionComponent,
    
   ],
   imports: [

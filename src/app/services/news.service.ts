@@ -18,17 +18,29 @@ export class NewsService {
 
   getNews(params?: any): Observable<SearchNews>{
     let queryParams = {};
-    if (params) {
+    if (params.section) {
       queryParams = {
         params: new HttpParams()
           .set("page-size", params.pageSize && params.pageSize.toString() || '12')
           .set("page", params.page && params.page.toString() || '1')
           .set("show-fields", params.showFields && params.showFields.toString() || 'all')
+          .set("section", params.section && params.section.toString() || null)
           .set("api-key", params.apiKey && params.apiKey.toString() || '57885ac9-e353-4a76-92fe-87efd38361d6')
-          .set("section", params.section && params.section.toString() || '')
+         
+         
+      }} else {
+         queryParams = {
+        params: new HttpParams()
+          .set("page-size", params.pageSize && params.pageSize.toString() || '12')
+          .set("page", params.page && params.page.toString() || '1')
+          .set("show-fields", params.showFields && params.showFields.toString() || 'all')
+          .set("api-key", params.apiKey && params.apiKey.toString() || '57885ac9-e353-4a76-92fe-87efd38361d6')
+         
          
       }
-    }
+
+      }
+    
     
 
   	return this.http.get(baseUrl, queryParams).map(response =>{

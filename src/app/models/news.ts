@@ -28,9 +28,24 @@ export class News {
 }
 export class Fields {
 	bodyText: string; 
+  headline: string;
+  standfirst: string; 
+  trailText: string; 
+  byline: string; 
+  main: string; 
+  thumbnail: string; 
+
 
   	 constructor(obj?: any) {
     this.bodyText = obj && obj.bodyText || "";
+    this.headline = obj && obj.headline || "";
+    this.standfirst = obj && obj.standfirst || "";
+    this.trailText = obj && obj.trailText || "";
+    this.byline = obj &&  obj.byline || "";
+    this.main = obj && obj.main || null;
+    this.thumbnail = obj && obj.thumbnail || null;
 
   }
 }
+
+

@@ -1,0 +1,112 @@
+
+<div class="container">
+<div class="row" *ngIf="news">
+	<div class="col-6 main">
+		<div class="well">
+			<img src="{{news[0].fields.thumbnail}}" class="picture">
+		</div>
+		<div class="news-content">
+			<span class="section-name">{{news[0].sectionName}} | </span>
+			<span class="publishDate">{{ news[0].webPublicationDate | date:'short'}}</span>
+			<h2 class="webTitle"> <a  href="{{news[0].webUrl}}" target="_blank">{{news[0].webTitle}}</a></h2>
+			<p class="underTitle">{{news[0].fields.bodyText.substring(0,300)}}... 
+			</p>
+		</div>
+	</div>
+
+	<div class="col-6">
+		<div class="row">
+			<div class="col-6">
+
+				<div class="well">
+					<img src="{{news[1].fields.thumbnail}}" class="picture">
+				</div>
+				<div class="news-content1">
+					<span class="section-name">{{news[1].sectionName}} | </span>
+					<span class="publish-date">{{ news[1].webPublicationDate | date:'short'}}</span>
+					<h2 class="webTitle1"> <a  href="{{news[1].webUrl}}" target="_blank">{{news[1].webTitle}}</a></h2>
+					<p class="underTitle">{{news[1].fields.bodyText.substring(0,60)}}... 
+					</p>
+				</div>
+
+			</div>
+			<div class="col-6">
+				<div class="well">
+					<img src="{{news[2].fields.thumbnail}}" class="picture">
+				</div>
+				<div class="news-content1">
+					<span class="section-name">{{news[2].sectionName}} | </span>
+					<span class="publish-date">{{ news[2].webPublicationDate | date:'short'}}</span>
+					<h2 class="webTitle1"> <a  href="{{news[2].webUrl}}" target="_blank">{{news[2].webTitle}}</a></h2>
+					<p class="underTitle">{{news[2].fields.bodyText.substring(0,60)}}... 
+					</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="well">
+					<img src="{{news[3].fields.thumbnail}}" class="picture">
+				</div>
+				<div class="news-content1">
+					<span class="section-name">{{news[3].sectionName}} | </span>
+					<span class="publish-date">{{ news[3].webPublicationDate | date:'short'}}</span>
+					<h2 class="webTitle1"> <a  href="{{news[1].webUrl}}" target="_blank">{{news[3].webTitle}}</a></h2>
+					<p class="underTitle">{{news[3].fields.bodyText.substring(0,60)}}... 
+					</p>
+				</div>
+
+			</div>
+			<div class="col-6">
+				<div class="well">
+					<img src="{{news[4].fields.thumbnail}}" class="picture">
+				</div>
+				<div class="news-content1">
+					<span class="section-name">{{news[4].sectionName}} | </span>
+					<span class="publish-date">{{ news[4].webPublicationDate | date:'short'}}</span>
+					<h2 class="webTitle1"> <a  href="{{news[4].webUrl}}" target="_blank">{{news[4].webTitle}}</a></h2>
+					<p class="underTitle">{{news[4].fields.bodyText.substring(0,60)}}... 
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div *ngFor="let story of news | slice: 5;let i=index" class="col-3">
+		<div >
+			<div class="well">
+					<img src="{{story.fields.thumbnail}}" class="picture">
+				</div>
+			<div>
+			<span class="section-name">{{story.sectionName}} | </span>
+			<h2 class="webTitle2"> <a  href="{{story.webUrl}}" target="_blank">{{story.webTitle}}</a></h2>
+
+			</div>
+	</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

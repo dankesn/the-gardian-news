@@ -1,0 +1,18 @@
+
+<div *ngFor="let story of news">
+	<div class="row">
+		<div class="col-4">
+			<img src="{{story.fields.thumbnail}}" class="picture">
+		</div>
+		<div class="col-8">
+	<span >{{story.sectionName}} | </span><span class="publishDate">{{ story.webPublicationDate | date:'short'}}</span>
+ 	<h2 class="webTitle"> <a  href="{{story.webUrl}}" target="_blank">{{story.webTitle}}</a></h2>
+ 	<p class="underTitle">{{story.fields.bodyText.substring(0,300)}}... 
+ 	</p>
+ 		</div>
+ 	</div>
+</div>
+
+
+
+
